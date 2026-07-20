@@ -6,8 +6,10 @@
     <title>Karra Varun | Aspiring Software Developer</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
+    <!-- Bootstrap CSS for Grid Layout -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Tailwind CSS for Modern Styling & Colors -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,8 +29,10 @@
         }
     </script>
     
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -41,6 +45,27 @@
         .font-mono {
             font-family: 'Fira Code', monospace;
         }
+        /* Glowing Image Effect */
+        .image-glow-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .image-glow-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(45deg, #06b6d4, #3b82f6);
+            border-radius: 1.5rem;
+            filter: blur(15px);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        .image-glow-wrapper:hover::before {
+            opacity: 0.9;
+            filter: blur(20px);
+        }
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0b0f19; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
@@ -49,6 +74,7 @@
 </head>
 <body class="antialiased selection:bg-accentCyan selection:text-white">
 
+    <!-- Responsive Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top bg-darkerBg/90 backdrop-blur-md border-b border-gray-800 py-3">
         <div class="container">
             <a class="navbar-brand font-bold text-2xl tracking-wide text-textPrimary d-flex align-items-center gap-2" href="#home">
@@ -69,10 +95,11 @@
         </div>
     </nav>
 
+    <!-- Hero Section with Photo -->
     <section id="home" class="min-vh-100 d-flex align-items-center pt-20 bg-gradient-to-b from-darkerBg via-darkBg to-darkerBg">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mt-5 mt-lg-0">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                <div class="col-lg-7 mt-5 mt-lg-0">
                     <p class="text-accentCyan font-mono mb-3 tracking-wide">Hi there, I'm</p>
                     <h1 class="display-3 font-bold text-textPrimary mb-2 tracking-tight">Karra Varun Kumar Reddy.</h1>
                     <h2 class="display-6 font-bold text-gray-500 mb-4">Aspiring Software Developer.</h2>
@@ -83,15 +110,23 @@
                         <a href="#projects" class="btn bg-transparent border-2 border-accentCyan text-accentCyan hover:bg-accentCyan hover:text-white px-4 py-2 rounded-lg font-mono transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)]">
                             View My Work
                         </a>
-                        <a href="VarunResume.pdf" target="_blank" class="btn bg-cardBg border border-gray-700 text-textPrimary hover:bg-gray-700 px-4 py-2 rounded-lg font-mono transition d-flex align-items-center gap-2">
+                        <a href="resume.pdf" target="_blank" class="btn bg-cardBg border border-gray-700 text-textPrimary hover:bg-gray-700 px-4 py-2 rounded-lg font-mono transition d-flex align-items-center gap-2">
                             <i class="fas fa-file-pdf text-red-400"></i> View Resume
                         </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end mb-5 mb-lg-0">
+                    <!-- Profile Photo Integration -->
+                    <div class="image-glow-wrapper w-64 h-64 md:w-80 md:h-80">
+                        <img src="PROFILE_3.jpeg" alt="Karra Varun Kumar Reddy" class="w-100 h-100 object-cover rounded-2xl border-2 border-gray-700 shadow-2xl relative z-10 transition transform hover:scale-[1.02] duration-300">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="py-20 bg-darkerBg">
         <div class="container max-w-6xl mx-auto">
             <div class="d-flex align-items-center mb-12">
@@ -151,6 +186,7 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="py-20 bg-darkBg">
         <div class="container max-w-6xl mx-auto">
             <div class="d-flex align-items-center mb-12">
@@ -207,6 +243,7 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="py-20 bg-darkerBg">
         <div class="container max-w-6xl mx-auto">
             <div class="d-flex align-items-center mb-12">
@@ -272,6 +309,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-20 bg-darkBg text-center">
         <div class="container max-w-2xl mx-auto">
             <p class="text-accentCyan font-mono mb-3 tracking-wide">05. What's Next?</p>
@@ -299,6 +337,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="py-8 bg-darkerBg border-t border-gray-800 text-center">
         <div class="container">
             <div class="d-flex justify-content-center gap-4 mb-4">
